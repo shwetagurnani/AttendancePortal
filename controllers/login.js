@@ -46,7 +46,10 @@ exports.postLoginForm=(req,res,next)=>{
           {
           req.session.loggedin=true;
           req.session.username=username;
-          res.send('teacher front done');
+          res.render('TeacherFront',{
+            pageTitle:'AttendancePortal',
+            name:username
+          })
           }
           else
          {
