@@ -46,10 +46,17 @@ exports.postLoginForm=(req,res,next)=>{
           {
           req.session.loggedin=true;
           req.session.username=username;
-          res.render('TeacherFront',{
-            pageTitle:'AttendancePortal',
-            name:username
-          })
+          db.query('SELECT subject FROM allotment where teacher=?',[username], function(error, results)
+          {
+           if(error)
+           console.log(error);
+          //  res.render('teacherFront',{
+          //   pageTitle:'teacher',
+          //   prods:results
+               
+          //  });
+          console.log(results[0]);
+          });
           }
           else
          {
