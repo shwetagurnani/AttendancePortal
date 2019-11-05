@@ -14,7 +14,7 @@ exports.postLoginForm=(req,res,next)=>{
     const post=req.body.post;
      if(username&&password&&post.localeCompare("student")==0)
      {
-      db.query(' SELECT * FROM studentdata WHERE username = ? AND password = ?', [username, password], function(error, results)
+      db.query(' SELECT * FROM s  tudentdata WHERE username = ? AND password = ?', [username, password], function(error, results)
         {
         if(error)
         {
@@ -50,12 +50,14 @@ exports.postLoginForm=(req,res,next)=>{
           {
            if(error)
            console.log(error);
-          //  res.render('teacherFront',{
-          //   pageTitle:'teacher',
-          //   prods:results
-               
-          //  });
-          console.log(results[0]);
+           res.render('teacherFront',{
+            pageTitle:'teacher',
+            prods:results
+              
+           });
+          
+          //res.send(ress);
+        // res.send(results);
           });
           }
           else
