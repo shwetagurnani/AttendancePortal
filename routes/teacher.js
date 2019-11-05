@@ -6,8 +6,12 @@ const TeacherController=require('../controllers/teacher');
 
 const router=express.Router();
 
-router.get('/teacher',TeacherController.getFront);
+router.get('/viewAtt',TeacherController.viewAtt);
 
-router.post('/teacher',TeacherController.postFront);
+router.get('/getAtt',TeacherController.getAtt);
+
+router.post('/postAtt',TeacherController.postAtt);
+
+
 
 module.exports=router;
