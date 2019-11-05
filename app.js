@@ -20,6 +20,7 @@ app.use(session({
 const LoginRoutes=require('./routes/login');
 const TeacherRoutes=require('./routes/teacher');
 const StudentRoutes=require('./routes/student');
+const AdminRoutes=require('./routes/admin');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -27,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(LoginRoutes);
 app.use(TeacherRoutes);
 app.use(StudentRoutes);
-
+app.use(AdminRoutes);
 
 
 
