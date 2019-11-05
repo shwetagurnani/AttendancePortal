@@ -17,12 +17,17 @@ app.use(session({
 	saveUninitialized: true
 }));
 
-const loginRoutes=require('./routes/login');
+const LoginRoutes=require('./routes/login');
+const TeacherRoutes=require('./routes/teacher');
+const StudentRoutes=require('./routes/student');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(loginRoutes);
+app.use(LoginRoutes);
+app.use(TeacherRoutes);
+app.use(StudentRoutes);
+
 
 
 
